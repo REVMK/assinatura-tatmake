@@ -87,8 +87,8 @@ footer .shell { min-height: 4.5rem; font-size: .8rem; }
 }
 .silk { position: absolute; inset: 0 0 auto; width: 100%; height: clamp(12rem, 30vw, 28rem); color: var(--curve-color); z-index: -1; pointer-events: none; }
 .hero .silk { color: #e1acc8; inset: 0; height: 100%; }
-.hero-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: var(--layout-gap); align-items: center; padding-block: clamp(3.25rem, 7.3vw, 6.8rem); }
-.hero-copy { padding: var(--spacing-6) 0 0; border-top: 1px solid #e1b49b90; }
+.hero-layout { display: grid; justify-items: center; gap: clamp(1.5rem, 3vw, 2.75rem); padding-block: clamp(2.5rem, 5.5vw, 5rem); text-align: center; }
+.hero-copy { width: 100%; padding-top: var(--spacing-6); border-top: 1px solid #e1b49b90; }
 .overline { font-size: .72rem; line-height: 1.35; font-weight: 650; text-transform: uppercase; letter-spacing: .14em; color: var(--label-color, var(--color-plum)); }
 .hero .overline { color: var(--color-sand); }
 .hero h1 {
@@ -96,16 +96,16 @@ footer .shell { min-height: 4.5rem; font-size: .8rem; }
   line-height: .98;
   letter-spacing: -.074em;
   margin-block: var(--spacing-4) var(--spacing-6);
-  max-width: 17ch;
   text-wrap: balance;
 }
 .hero h1 em { color: #e7c8dc; font-style: normal; }
-.hero-copy > p:not(.overline) { max-width: 48ch; color: var(--color-light-muted); }
-.hero-copy > .hero-lead { font-size: clamp(1.07rem, 1.7vw, 1.28rem); }
-.hero-copy .button { margin-top: var(--spacing-8); }
+.hero-lead, .hero-support p { color: var(--color-light-muted); margin-inline: auto; }
+.hero-lead { max-width: 68ch; font-size: clamp(1.07rem, 1.7vw, 1.28rem); }
+.hero-support { max-width: 60ch; }
+.hero-support .button { margin-top: var(--spacing-4); }
 .hero-media {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start; gap: clamp(.35rem, 1.1vw, .85rem); width: 100%; max-width: 39rem; justify-self: end;
+  align-items: start; gap: clamp(.35rem, 1.1vw, .85rem); width: 100%; max-width: 43rem;
 }
 .hero-media figure { min-width: 0; }
 .hero-picture { aspect-ratio: 2 / 3; box-shadow: 0 .9rem 2rem #23162977; }
@@ -254,8 +254,7 @@ figcaption { margin-top: var(--spacing-3); color: var(--secondary-ink); font-siz
 .closing h3 { font-size: clamp(1.4rem, 2.7vw, 2.45rem); letter-spacing: -.06em; max-width: 24ch; }
 
 @media (max-width: 52rem) {
-  .hero-layout { grid-template-columns: minmax(0, 1fr); gap: clamp(1.75rem, 6vw, 3rem); }
-  .hero-media { max-width: 31rem; justify-self: start; }
+  .hero-media { max-width: 31rem; }
   .hero h1 { font-size: clamp(2.7rem, 6.3vw, 4.65rem); }
   .chapter-head h2 { font-size: clamp(2.9rem, 8.6vw, 6.8rem); }
   .format-nav .shell { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -265,9 +264,9 @@ figcaption { margin-top: var(--spacing-3); color: var(--secondary-ink); font-siz
 @media (max-width: 39rem) {
   .site-nav { gap: var(--spacing-3); min-height: 3.9rem; }
   .site-nav nav { display: none; }
-  .hero-layout, .service-layout, .story-layout, .decision-grid { grid-template-columns: minmax(0, 1fr); }
+  .service-layout, .story-layout, .decision-grid { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { font-size: clamp(2.58rem, 10.8vw, 4.5rem); }
-  .hero-media { width: min(100%, 24rem); justify-self: center; }
+  .hero-media { max-width: 24rem; }
   .hero .silk { height: 74%; }
   .chapter-head h2 { font-size: clamp(2.55rem, 10.6vw, 4.6rem); }
   .chapter-head { margin-bottom: var(--spacing-8); }
@@ -457,10 +456,12 @@ figcaption { margin-top: var(--spacing-3); color: var(--secondary-ink); font-siz
     <p class="overline">Assinatura Tatmake</p>
     <h1>Escolha o vestido, os acessórios e a beleza <em>com a direção de uma especialista</em></h1>
     <p class="hero-lead">Você pode seguir as orientações através de um guia digital criado pela Tati ou contar com sua ajuda presencial em todo o processo de escolha e provas.</p>
+  </div>
+  <div class="hero-media"><figure class="hero-step"><div class="hero-picture frame"><img src="assets/imagens/tatmake-assinatura-noivas-croqui-do-vestido-de-noiva-com-capa-e-buque-em-cascata.webp" alt="Croqui do vestido de noiva com capa e buquê em cascata" width="341" height="512" loading="eager" decoding="async"></div><figcaption>Desenho</figcaption></figure><figure class="hero-step"><div class="hero-picture frame"><img src="assets/imagens/tatmake-assinatura-noivas-aplicacao-da-maquiagem-da-noiva.webp" alt="Aplicação da maquiagem da noiva" width="341" height="512" loading="eager" decoding="async"></div><figcaption>Maquiagem</figcaption></figure><figure class="hero-step"><div class="hero-picture frame"><img src="assets/imagens/tatmake-assinatura-noivas-noiva-pronta-com-o-vestido-a-capa-bordada-e-o-buque.webp" alt="Noiva pronta com o vestido, a capa bordada e o buquê" width="288" height="512" loading="eager" decoding="async"></div><figcaption>Noiva pronta</figcaption></figure></div>
+  <div class="hero-support">
     <p>Se você já escolheu o vestido, a orientação começa pela maquiagem, pelo penteado e pelos acessórios que faltam.</p>
     <a class="button" href="#formatos">Ver serviços e valores <span class="action-arrow" aria-hidden="true">↓</span></a>
   </div>
-  <div class="hero-media"><figure class="hero-step"><div class="hero-picture frame"><img src="assets/imagens/tatmake-assinatura-noivas-croqui-do-vestido-de-noiva-com-capa-e-buque-em-cascata.webp" alt="Croqui do vestido de noiva com capa e buquê em cascata" width="341" height="512" loading="eager" decoding="async"></div><figcaption>Desenho</figcaption></figure><figure class="hero-step"><div class="hero-picture frame"><img src="assets/imagens/tatmake-assinatura-noivas-aplicacao-da-maquiagem-da-noiva.webp" alt="Aplicação da maquiagem da noiva" width="341" height="512" loading="eager" decoding="async"></div><figcaption>Maquiagem</figcaption></figure><figure class="hero-step"><div class="hero-picture frame"><img src="assets/imagens/tatmake-assinatura-noivas-noiva-pronta-com-o-vestido-a-capa-bordada-e-o-buque.webp" alt="Noiva pronta com o vestido, a capa bordada e o buquê" width="288" height="512" loading="eager" decoding="async"></div><figcaption>Noiva pronta</figcaption></figure></div>
 </div>
 </section>
 <section class="chapter chapter-paper" id="escolhas"><svg class="silk" aria-hidden="true" viewBox="0 0 1440 360" preserveAspectRatio="none"><defs><linearGradient id="fio-escolhas" x2="100%" y2="68%"><stop stop-color="currentColor" stop-opacity=".07"/><stop offset=".54" stop-color="currentColor" stop-opacity=".46"/><stop offset="1" stop-color="currentColor" stop-opacity=".09"/></linearGradient></defs><g fill="none" stroke="url(#fio-escolhas)" stroke-width="1"><path d="M -150 274 C 173 -12, 494 5, 743 162 S 1184 389, 1506 -6" vector-effect="non-scaling-stroke"/><path d="M -140 284 C 186 -3, 483 10, 751 171 S 1198 383, 1512 6" vector-effect="non-scaling-stroke"/><path d="M -130 294 C 199 6, 472 15, 759 180 S 1212 377, 1518 18" vector-effect="non-scaling-stroke"/><path d="M -120 304 C 212 15, 461 20, 767 189 S 1226 371, 1524 30" vector-effect="non-scaling-stroke"/><path d="M -110 314 C 225 24, 450 25, 775 198 S 1240 365, 1530 42" vector-effect="non-scaling-stroke"/><path d="M -100 324 C 238 33, 439 30, 783 207 S 1254 359, 1536 54" vector-effect="non-scaling-stroke"/><path d="M -90 334 C 251 42, 428 35, 791 216 S 1268 353, 1542 66" vector-effect="non-scaling-stroke"/><path d="M -80 344 C 264 51, 417 40, 799 225 S 1282 347, 1548 78" vector-effect="non-scaling-stroke"/><path d="M -70 354 C 277 60, 406 45, 807 234 S 1296 341, 1554 90" vector-effect="non-scaling-stroke"/></g></svg><div class="shell"><header class="chapter-head"><h2>Uma escolha muda a próxima</h2></header>
